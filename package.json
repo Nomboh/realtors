@@ -1,0 +1,11 @@
+{
+  "name": "nexter",
+  "version": "1.0.0",
+  "description": "Nexter webpage",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch  sass:css"
+  },
+  "author": "Quentin",
+  "license": "ISC"
+}
