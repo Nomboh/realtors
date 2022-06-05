@@ -1,15 +1,183 @@
 // COLOR VARIABLES
 $color-primary: #c69963;
-$color-primary-dark: #B28451;
+$color-primary-dark: #b28451;
 
 $color-secondary: #101d2c;
 
 $color-grey-light-1: #f9f7f6;
 $color-grey-light-2: #aaa;
 
-$color-grey-dark-1: #54483A;
-$color-grey-dark-2: #6D5D4B;
+$color-grey-dark-1: #54483a;
+$color-grey-dark-2: #6d5d4b;
 
 // FONT VARIABLES
-$font-primary: 'Nunito', sans-serif;
-$font-display: 'Josefin Sans', sans-serif;
+$font-primary: "Nunito", sans-serif;
+$font-display: "Josefin Sans", sans-serif;
+
+// RESPONSIVE BREAKPOINTS
+
+$breakpoint-l: 62.5em;
+$breakpoint-m: 50em;
+$breakpoint-s: 31.25em;
+
+*,
+*::before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  box-sizing: border-box;
+
+  @media screen and (max-width: $breakpoint-l) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: $color-grey-dark-1;
+  background-color: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    [side-s] 8rem [side-e main-s] minmax(5rem, 1fr) [inner-s] repeat(
+      8,
+      [col-s] minmax(min-content, 14rem) [col-e]
+    )
+    [inner-e] minmax(5rem, 1fr) [main-e];
+  grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
+  @media screen and (max-width: $breakpoint-l) {
+    grid-template-columns:
+      [main-s] minmax(5rem, 1fr) [inner-s] repeat(
+        8,
+        [col-s] minmax(min-content, 14rem) [col-e]
+      )
+      [inner-e] minmax(5rem, 1fr) [main-e];
+
+    grid-template-rows: 8rem 80vh min-content 40vw repeat(3, min-content);
+  }
+
+  @media screen and (max-width: $breakpoint-m) {
+    grid-template-columns:
+      [main-s] minmax(5rem, 1fr) [inner-s] repeat(
+        8,
+        [col-s] minmax(min-content, 14rem) [col-e]
+      )
+      [inner-e] minmax(5rem, 1fr) [main-e];
+
+    grid-template-rows: 8rem 80vh 60vh repeat(6, min-content);
+  }
+
+  @media screen and (max-width: $breakpoint-m) {
+    grid-template-rows: 8rem 70vh 50vh repeat(6, min-content);
+  }
+}
+
+%heading {
+  font-family: $font-display;
+  font-weight: 400;
+}
+
+.heading-1 {
+  @extend %heading;
+  font-size: 4.9rem;
+  line-height: 1;
+  color: white;
+}
+
+.heading-2 {
+  @extend %heading;
+  font-size: 4rem;
+  font-style: italic;
+  line-height: 1.2;
+  &-light {
+    color: $color-grey-light-2;
+  }
+
+  &-dark {
+    color: $color-grey-dark-2;
+  }
+}
+
+.heading-3 {
+  @extend %heading;
+  color: $color-primary-dark;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.9rem;
+  &-light {
+    color: $color-grey-light-2;
+  }
+
+  &-dark {
+    color: $color-grey-dark-2;
+  }
+}
+
+.mbx {
+  margin-bottom: 1rem;
+}
+
+.mbs {
+  margin-bottom: 2rem;
+}
+
+.mbm {
+  margin-bottom: 4rem;
+}
+
+.mbl {
+  margin-bottom: 6rem;
+}
+
+.mbxl {
+  margin-bottom: 8rem;
+}
+
+.mtx {
+  margin-top: 1rem;
+}
+
+.mts {
+  margin-top: 2rem;
+}
+
+.mtm {
+  margin-top: 4rem;
+}
+
+.mtl {
+  margin-top: 6rem;
+}
+
+.mtxl {
+  margin-top: 8rem;
+}
+
+.btn {
+  padding: 1.3rem 2rem;
+  border-radius: 2px;
+  border: none;
+  background-color: $color-primary;
+  color: white;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $color-primary-dark;
+  }
+}

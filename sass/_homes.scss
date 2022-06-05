@@ -1,0 +1,63 @@
+.homes {
+  grid-column: inner-s / inner-e;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 6rem;
+  margin: 10rem 0;
+  background-color: white;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  &_icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    fill: $color-primary;
+  }
+  &_img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+  }
+
+  &_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 5rem 0rem 3rem 2rem;
+    background-color: $color-grey-light-1;
+  }
+
+  &_detail {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &_text {
+    font-size: 1.4rem;
+  }
+
+  &_heart {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
+.heading-5 {
+  font-size: 2rem;
+  font-weight: 400;
+  width: 80%;
+  font-family: $font-display;
+  padding: 1rem 2rem;
+  color: white;
+  background-color: $color-secondary;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

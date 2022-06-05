@@ -1,0 +1,35 @@
+.sidebar {
+  background-color: $color-primary;
+  grid-column: side-s/side-e;
+  grid-row: 1 / -1;
+  @media screen and (max-width: $breakpoint-l) {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
+
+  &_lines {
+    width: 100%;
+    padding: 2rem 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (max-width: $breakpoint-l) {
+      align-items: flex-end;
+      margin-top: 2rem;
+      padding: 0 3rem;
+    }
+  }
+
+  &_line {
+    background-color: white;
+    height: 2px;
+    width: 60%;
+    @media screen and (max-width: $breakpoint-l) {
+      width: 4.5rem;
+    }
+
+    &-2 {
+      margin: 1.5rem 0;
+    }
+  }
+}

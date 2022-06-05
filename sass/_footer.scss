@@ -1,0 +1,32 @@
+.footer {
+  background-color: $color-secondary;
+  grid-column: main-s / main-e;
+  padding: 10rem 5rem;
+
+  &_items {
+    list-style: none;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    align-items: center;
+    justify-items: center;
+  }
+
+  &_list {
+    font-size: 1.6;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+
+    padding: 2rem;
+    &:hover {
+      background-color: rgba(#fff, 0.05);
+    }
+  }
+}
+.copyright {
+  font-size: 1.4rem;
+  text-align: center;
+  color: rgba($color: white, $alpha: 0.3);
+  padding: 2rem;
+}
